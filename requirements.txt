@@ -1,3 +1,5 @@
-Flask==2.0.3
-python-telegram-bot==20.0a1
-textblob==0.15.3
+Flask
+python-telegram-bot
+textblob
+requests
+python-dotenv
