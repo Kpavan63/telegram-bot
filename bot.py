@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore", category=SyntaxWarning)
 app = Flask(__name__)
 
 # Fetch the bot token from environment variable
-BOT_TOKEN = os.getenv('6892664579:AAFyjH9E1UPjUgnpOyjJMKoTGWkQ3y5ZJXY')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 if not BOT_TOKEN:
     raise ValueError("BOT_TOKEN environment variable not set")
@@ -119,6 +119,11 @@ async def button_click(update: Update, context: CallbackContext):
 async def unknown(update: Update, context: CallbackContext):
     await update.message.reply_text("❓ Sorry, I didn't understand that. Please type a product name to search.", parse_mode='Markdown')
 
+# Start command handler
+async def start(update: Update, context: CallbackContext):
+    welcome_message = "Welcome to the product search bot! Type the product name and I will help you find it."
+    await update.message.reply_text(welcome_message)
+
 # Flask route to handle the webhook
 @app.route('/' + BOT_TOKEN, methods=['POST'])
 def webhook():
@@ -136,7 +141,7 @@ def main():
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_product_search))
     application.add_handler(CallbackQueryHandler(button_click))  # Handle button clicks
 
-    # Start Flask app
+    # Start Flask app (Vercel will handle this for you)
     app.run(host='0.0.0.0', port=5000)
 
 if __name__ == '__main__':
