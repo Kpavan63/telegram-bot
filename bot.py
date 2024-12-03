@@ -13,8 +13,11 @@ warnings.filterwarnings("ignore", category=SyntaxWarning)
 # Initialize Flask app
 app = Flask(__name__)
 
-# Your bot's token
-BOT_TOKEN = os.getenv('6892664579:AAFyjH9E1UPjUgnpOyjJMKoTGWkQ3y5ZJXY')  # Set bot token as an environment variable
+# Fetch the bot token from environment variable
+BOT_TOKEN = os.getenv('6892664579:AAFyjH9E1UPjUgnpOyjJMKoTGWkQ3y5ZJXY')
+
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN environment variable not set")
 
 # Load product data from 'post.json'
 with open('post.json', 'r') as f:
@@ -117,7 +120,7 @@ async def unknown(update: Update, context: CallbackContext):
     await update.message.reply_text("❓ Sorry, I didn't understand that. Please type a product name to search.", parse_mode='Markdown')
 
 # Flask route to handle the webhook
-@app.route('/' + os.getenv('BOT_TOKEN'), methods=['POST'])
+@app.route('/' + BOT_TOKEN, methods=['POST'])
 def webhook():
     json_str = request.get_data().decode('UTF-8')
     update = Update.de_json(json.loads(json_str), application.bot)
