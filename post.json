@@ -1,0 +1,42 @@
+[
+    {
+        "title": "realme GT7 ",
+        "rating": 4.5,
+        "discount": 20,
+        "mrp": 24999,
+        "image_url": "https://m.media-amazon.com/images/I/71w1fbZG-jL._SL1500_.jpg",
+        "link": "https://amzn.to/3D1R7ly"
+    },
+    {
+        "title": "4K LED TV",
+        "rating": 4.7,
+        "discount": 15,
+        "mrp": 49999,
+        "image_url": "https://m.media-amazon.com/images/I/41T1aKzxfWL._SY300_SX300_QL70_FMwebp_.jpg",
+        "link": "https://example.com/product/4k-led-tv"
+    },
+    {
+        "title": "Wireless Headphones",
+        "rating": 4.2,
+        "discount": 30,
+        "mrp": 5999,
+        "image_url": "",
+        "link": "https://example.com/product/wireless-headphones"
+    },
+    {
+        "title": "Smartwatch Pro",
+        "rating": 4.3,
+        "discount": 25,
+        "mrp": 10999,
+        "image_url": "https://m.media-amazon.com/images/I/41aS-d9pjCL._SY445_SX342_QL70_FMwebp_.jpg",
+        "link": "https://example.com/product/smartwatch-pro"
+    },
+    {
+        "title": "Gaming Laptop",
+        "rating": 4.8,
+        "discount": 10,
+        "mrp": 79999,
+        "image_url": "",
+        "link": "https://example.com/product/gaming-laptop"
+    }
+]
